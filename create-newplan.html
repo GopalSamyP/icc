@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Community Collaborative</title>
+    <!-- favicon -->
+    <!-- <link href="css1/bootstrap.css" rel="stylesheet">
+    <link href="css1/style.css" rel="stylesheet"> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- fontawesome icon  -->
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- flaticon css -->
+    <link rel="stylesheet" href="assets/fonts/flaticon.css">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+
+<body>
+    <!-- preloader begin-->
+    <div class="sec">
+        <div class="loader">
+            <div class="circle item0"></div>
+            <div class="circle item1"></div>
+            <div class="circle item2"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- header begin-->
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="support-bar-left">
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="support-bar-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-3 col-lg-3 d-xl-flex d-lg-flex d-block align-items-center">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-7 d-xl-block d-lg-block d-flex align-items-center">
+                                <div class="logo-img">
+                                    <a href="index.html"><img src="assets/img/icc-logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="d-xl-none d-lg-none d-block col-5">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-9 d-xl-flex d-lg-flex d-block align-items-center">
+                        <div class="mainmenu">
+                            <nav class="navbar navbar-expand-lg">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item"> <a class="nav-link" href="index.html">Support</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- breadcrump begin-->
+    <div class="hyip-breadcrump extra_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="breadcrump-title text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrump end -->
+    <!-- faq begin-->
+    <div class="faq" ng-app="app" ng-controller="planController">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-10">
+                    <div class="section-title">
+                        <h2 class="add-space">Spending Plan Generator
+                        </h2>
+                        <p>This generator is for estimation of an individual spending plan and does not constitute an obligation on the part of GT Independence or to fund or authorize services</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="accordion" id="accordionExample">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                Participant's Information
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div><br></div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control" ng-model="data.details.name">
+                                                </div>
+                                                <div class="col">
+                                                    <label>UCI</label>
+                                                    <input type="text" class="form-control" ng-model="data.details.uci">
+                                                </div>
+                                                <div class="col">
+                                                    <label>FMS Vendor</label>
+                                                    <input type="text" class="form-control" ng-model="data.details.fmsvendor">
+                                                </div>
+                                            </div>
+                                            <div class="container">
+                                                <div class="row" style="padding: 12px;">
+                                                    <div class="col">Spending Plan Period</div>
+                                                    <div class="col">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">Begins</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="Select Date" name="planStart" id="planStart" ng-moel="data.details.SpendingPlan.planStart">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">Ends</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="Select Date" name="planEnd" id="planEnd" ng-moel="data.details.SpendingPlan.planEnd">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding: 12px;">
+                                                    <div class="col">Self Determination</div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <select class="form-control" id="selfDetermination">
+                                                                <option value="317">Sole Employer </option>
+                                                                <option value="316">Co-Employer </option>
+                                                                <option value="315">Bill Payer </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding: 12px;">
+                                                    <div class="col">FMS Vendor Number</div>
+                                                    <div class="col">
+                                                        <input type="text" class="form-control" disabled="disabled" id="fMSVendorNumber" ng-model="data.details.SpendingPlan.fMSVendorNumber">
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding: 12px;">
+                                                    <div class="col">Regional Center</div>
+                                                    <div class="col">
+                                                        <select class="form-control form-control--sm" id="regionalCenter">
+                                                            <option></option>
+                                                            <option agencyid="397" value="397" description="Alta RC SDP">Alta RC SDP</option>
+                                                            <option agencyid="398" value="398" description="Central Valley RC SDP">Central Valley RC SDP</option>
+                                                            <option agencyid="399" value="399" description="Eastern Los Angeles RC SDP">Eastern Los Angeles RC SDP</option>
+                                                            <option agencyid="400" value="400" description="Far Northern RC SDP">Far Northern RC SDP</option>
+                                                            <option agencyid="401" value="401" description="Golden Gate RC SDP">Golden Gate RC SDP</option>
+                                                            <option agencyid="402" value="402" description="Harbor RC SDP">Harbor RC SDP</option>
+                                                            <option agencyid="403" value="403" description="Inland RC SDP">Inland RC SDP</option>
+                                                            <option agencyid="404" value="404" description="Kern RC SDP">Kern RC SDP</option>
+                                                            <option agencyid="405" value="405" description="Lanterman RC SDP">Lanterman RC SDP</option>
+                                                            <option agencyid="406" value="406" description="North Bay RC SDP">North Bay RC SDP</option>
+                                                            <option agencyid="407" value="407" description="North Los Angeles RC SDP">North Los Angeles RC SDP</option>
+                                                            <option agencyid="408" value="408" description="Redwood Coast RC SDP">Redwood Coast RC SDP</option>
+                                                            <option agencyid="409" value="409" description="Orange County RC SDP">Orange County RC SDP</option>
+                                                            <option agencyid="410" value="410" description="East Bay RC SDP">East Bay RC SDP</option>
+                                                            <option agencyid="411" value="411" description="San Andreas RC SDP">San Andreas RC SDP</option>
+                                                            <option agencyid="412" value="412" description="San Diego RC SDP">San Diego RC SDP</option>
+                                                            <option agencyid="413" value="413" description="San Gabriel - Pomona RC SDP">San Gabriel - Pomona RC SDP</option>
+                                                            <option agencyid="414" value="414" description="South Central Los Angeles RC SDP">South Central Los Angeles RC SDP</option>
+                                                            <option agencyid="415" value="415" description="Tri-Counties RC SDP">Tri-Counties RC SDP</option>
+                                                            <option agencyid="416" value="416" description="Valley Mountain RC SDP">Valley Mountain RC SDP</option>
+                                                            <option agencyid="417" value="417" description="Westside RC SDP">Westside RC SDP</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding: 12px;">
+                                                    <div class="col">Workers Compensation</div>
+                                                    <div class="col">
+                                                        <input type="checkbox" id="workersCompensation">
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group" id="zipcontainer">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Zip</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="zip" ng-model="data.details.SpendingPlan.zip">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding: 12px;">
+                                                    <div class="col">Total Certified Budget Amount</div>
+                                                    <div class="col">
+                                                        <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalCertifiedBudgetAmount" ng-model="data.details.SpendingPlan.totalCertifiedBudgetAmount">
+                                                            </div>
+                                                    </div>
+                                                    <div class="col"></div>
+                                                </div>
+                                            </div>
+                                            <!-- end of the content -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="spendingPlanCategories">Spending Plan Categories</button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div><Br></div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control" id="selectServiceCode">
+                                                                <option value="310" description="310 - Respite" unit="15min">310 - Respite</option>
+                                                                <option value="311" description="311 - Respite Facility Out of Home">311 - Respite Facility Out of Home</option>
+                                                                <option value="312" description="312 - Live-In Caregiver" unit="15min">312 - Live-In Caregiver</option>
+                                                                <option value="313" description="313 - Homemaker" unit="15min">313 - Homemaker</option>
+                                                                <option value="314" description="314 - House Access Supports" unit="15min">314 - House Access Supports</option>
+                                                                <option value="315" description="315 - FMS Bill Payor" unit="Each">315 - FMS Bill Payor</option>
+                                                                <option value="316" description="316 - FMS Co-Employer" unit="Fee">316 - FMS Co-Employer</option>
+                                                                <option value="317" description="317 - FMS Sole Employer" unit="Each">317 - FMS Sole Employer</option>
+                                                                <option value="320" description="320 - Community Living Supports" unit="15min">320 - Community Living Supports</option>
+                                                                <option value="321" description="321 - Residential Facility" unit="15min">321 - Residential Facility</option>
+                                                                <option value="331" description="331 - Community Integration" unit="15min">331 - Community Integration</option>
+                                                                <option value="333" description="333 - Participant Directed Goods and Services" unit="Each">333 - Participant Directed Goods and Services</option>
+                                                                <option value="334" description="334 - Individual Training and Education" unit="15min">334 - Individual Training and Education</option>
+                                                                <option value="335" description="335 - Employment Supports" unit="15min">335 - Employment Supports</option>
+                                                                <option value="336" description="336 - Technology Supports" unit="15min">336 - Technology Supports</option>
+                                                                <option value="338" description="338 - Non-Medical Transportation" unit="Each">338 - Non-Medical Transportation</option>
+                                                                <option value="339" description="339 - Prevocational Supports" unit="15min">339 - Prevocational Supports</option>
+                                                                <option value="340" description="340 - Independent Facilitator" unit="15min">340 - Independent Facilitator</option>
+                                                                <option value="356" description="356 - Environmental Accessibility" unit="15min">356 - Environmental Accessibility</option>
+                                                                <option value="357" description="357 - Accupuncture Services" unit="15min">357 - Accupuncture Services</option>
+                                                                <option value="358" description="358 - Personal Emergency Response Systems" unit="15min">358 - Personal Emergency Response Systems</option>
+                                                                <option value="359" description="359 - Home Health Aide" unit="15min">359 - Home Health Aide</option>
+                                                                <option value="360" description="360 - Communication Support" unit="15min">360 - Communication Support</option>
+                                                                <option value="361" description="361 - Skilled Nursing" unit="15min">361 - Skilled Nursing</option>
+                                                                <option value="362" description="362 - Nutritional Consultation" unit="15min">362 - Nutritional Consultation</option>
+                                                                <option value="363" description="363 - Crisis Intervention and Supports" unit="15min">363 - Crisis Intervention and Supports</option>
+                                                                <option value="364" description="364  - Behavior Intervention" unit="15min">364 - Behavior Intervention</option>
+                                                                <option value="365" description="365 - Specialized Med Equip and Sup" unit="15min">365 - Specialized Med Equip and Sup</option>
+                                                                <option value="366" description="366 - Family Consumer Training" unit="15min">366 - Family Consumer Training</option>
+                                                                <option value="367" description="367 - Dental Services" unit="15min">367 - Dental Services</option>
+                                                                <option value="368" description="368 - Lenses and Frames" unit="15min">368 - Lenses and Frames</option>
+                                                                <option value="369" description="369 - Optometric-Optician Services" unit="15min">369 - Optometric-Optician Services</option>
+                                                                <option value="370" description="370  - Psychology Services" unit="15min">370 - Psychology Services</option>
+                                                                <option value="371" description="371 - Training and Couseling Services" unit="15min">371 - Training and Couseling Services</option>
+                                                                <option value="372" description="372  - Speech Hearing and Language" unit="15min">372 - Speech Hearing and Language</option>
+                                                                <option value="373" description="373 - Chiropractic Services" unit="15min">373 - Chiropractic Services</option>
+                                                                <option value="374" description="374 - Massage Therapy" unit="15min">374 - Massage Therapy</option>
+                                                                <option value="375" description="375 - Occupational Therapy" unit="15min">375 - Occupational Therapy</option>
+                                                                <option value="376" description="376  - Physical Therapy" unit="15min">376 - Physical Therapy</option>
+                                                                <option value="377" description="377 - Vehicle Modifications and Adaptations" unit="15min">377 - Vehicle Modifications and Adaptations</option>
+                                                                <option value="378" description="378 - Family Support Services" unit="15min">378 - Family Support Services</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.col-lg-6 (nested) -->
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <button type="button" class="btn btn-success" id="addService">Add Service</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                    </div>
+                                                </div>
+                                                <!-- /.row (nested) -->
+                                                <hr size="30">
+                                                <div class="row">
+                                                    <table class="table table-bordered" id="serviceTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Service Code</th>
+                                                                <th scope="col">Description</th>
+                                                                <th scope="col">Budget Allocated</th>
+                                                                <th scope="col"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        Total for Living Arrangement
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForLivingArrangement" ng-model="data.details.PlanCategories.totalForLivingArrangement" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        Total for Employment and Community Participation
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForEmploymentAndCommunityParticipation" ng-model="data.details.PlanCategories.totalForEmploymentAndCommunityParticipation" disabled="disabled" value="0.00">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        Total for Health and Safety
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForHealthAndSafety" ng-model="$scope.data.details.PlanCategories.totalForHealthAndSafety" disabled="disabled" value="0.00">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col"></div>
+                                                    <div class="col"></div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalPlanCategories" ng-model="$scope.data.details.PlanCategories.totalPlanCategories" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group">
+                                                            <label>What service category would you like your workers compensation rate applied to?</label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.col-lg-6 (nested) -->
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control" id="serviceOptions">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" id="providerExpenseContainer">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="providerExpenseCollapse">
+                                                Provider Expense
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="panel-body">
+                                                <div class="row" style="padding: 15px;">
+                                                     <div class="col"><h7>Enter provider and expense information</h7></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col" style="padding: 15px;"><button id="addVendorButton" class="btn">Add Vendor Provider</button></div>
+                                                    <div class="col" style="padding: 15px;"><button id="addExpenses" class="btn">Add Expenses</button></div>
+                                                    <div class="col"></div>
+                                                    <div class="col"></div>
+                                                    <div class="col"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Vendor Provider
+                                                                    <input type="text" class="form-control" id="vendorprovider">
+                                                                </th>
+                                                                <th>Units </th>
+                                                                <th>Auth Unit</th>
+                                                                <th>Pay Rate</th>
+                                                                <th>Pretax Total</th>
+                                                                <th>Taxes and Cost</th>
+                                                                <th>Total </th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="odd gradeX">
+                                                                <td>
+                                                                    <div class="col">Total</div>
+                                                                    <div class="col">
+                                                                        <button type="button" class="btn btn-success" disabled="disabled" disabled="disabled">Add Service</button>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group input-group">
+                                                                        <input type="text" class="form-control" placeholder="0" id="numberOfunits" disabled="disabled">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group input-group">
+                                                                        <input type="text" class="form-control" placeholder="0" id="authUnits" disabled="disabled">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="center"> </td>
+                                                                <td class="center">
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" placeholder="0.00" id="preTaxTotal" disabled="disabled">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="center">
+                                                                    health insurance:
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" placeholder="0.00" disabled="disabled">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="center"></td>
+                                                                <td class="center"></td>
+                                                            </tr>
+                                                            <tr class="even gradeC">
+                                                                <td>Cost Category: <div class="form-group">
+                                                                        <select class="form-control" id="providerExpenseSelect" disabled="disabled">
+                                                                            <option value="317">Sole Employer </option>
+                                                                            <option value="316">Co-Employer </option>
+                                                                            <option value="315">Bill Payer </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group input-group">
+                                                                        <input type="text" class="form-control" placeholder="0" disabled="disabled" id="costByUnit">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <select class="form-control" id="costTypePerUnit" disabled="disabled">
+                                                                            <option value="Each">Each </option>
+                                                                            <option value="Hr">Hr </option>
+                                                                            <option value="Salary">Salary </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <select class="form-control" id="costTimePerUnit" disabled="disabled">
+                                                                            <option value="PerDay">Per Day </option>
+                                                                            <option value="PerWeek">Per Week </option>
+                                                                            <option value="PerMonth">Per Month </option>
+                                                                            <option value="PerSpendingPlan">Per Spending Plan </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </td>
+                                                                <td> <input type="text" class="form-control" placeholder="0" disabled="disabled" id="costByAuthUnit"></td>
+                                                                <td class="center">
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" placeholder="0.00" disabled="disabled" id="costByPayRate">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="center">
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" placeholder="0.00" disabled="disabled" id="costPretaxTotal">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="center">
+                                                                    <div class="row">
+                                                                     taxes:
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                    </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                     sick time:
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                    </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                     work comp:
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                    </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                     health:
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                    </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="center">
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">$</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" placeholder="0.00" id="totalProviderAmount" disabled="disabled">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="center"> X </td>
+                                                            </tr>
+                                                            <tr class="odd gradeA">
+                                                                <td>Summary </td>
+                                                                <td colspan="10"><label id="expensesSummary">providing at $0.00 per hr for each week for 52 weeks for 0 total hr at a grand total of</label></td>
+                                                            </tr>
+                                                            <tr class="odd gradeA">
+                                                                <td>Notes </td>
+                                                                <td colspan="10"> <textarea class="form-control" rows="3"></textarea></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" id="allocatedBudgetExpensesContainer">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree" id="allocatedBudgetExpenses">
+                                                Allocated Budget Expenses
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div> <br></div>
+                                            <div class="panel-body">
+                                                <table width="100%" border="0" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                    <tr>
+                                                        <td> <label>Workers Compensation</label></td>
+                                                        <td>&nbsp;</td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForHealthAndSafety" ng-model="$scope.data.details.PlanCategories.totalForHealthAndSafety" disabled="disabled">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <label>Full Time Workers</label></td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" placeholder="0" disabled="disabled" value="0">
+                                                            </div>
+                                                        </td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <label>Part Time Workers</label></td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" placeholder="0" disabled="disabled" value="0">
+                                                            </div>
+                                                        </td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <label>Insurance and Benefits</label></td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <input type="text" class="form-control" placeholder="0.00" disabled="disabled">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">%</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForHealthAndSafety" ng-model="$scope.data.details.PlanCategories.totalForHealthAndSafety" disabled="disabled" value="0.00">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <label>Sick Rate</label></td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <input type="text" class="form-control" placeholder="0.00" disabled="disabled" id="expensesSickRate">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">%</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForHealthAndSafety" ng-model="$scope.data.details.PlanCategories.totalForHealthAndSafety" disabled="disabled" value="0.00">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <label>Tax</label></td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <input type="text" class="form-control" placeholder="0.00" disabled="disabled" id="expensesTax">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">%</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForHealthAndSafety" ng-model="$scope.data.details.PlanCategories.totalForHealthAndSafety" disabled="disabled" value="0.00">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <label>Total Tax and Costs</label></td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <input type="text" class="form-control" placeholder="0.00" disabled="disabled" id="totalTaxAndCosts">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">%</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="totalForHealthAndSafety" ng-model="$scope.data.details.PlanCategories.totalForHealthAndSafety" disabled="disabled" value="0.00">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree" id="spendingPlanButton">
+                                                Spending Plan
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="panel-body">
+                                                <div><br></div>
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <label>Name:</label>
+                                                        <input class="form-control" id="fspName" disabled="disabled">
+                                                    </div>
+                                                    <!-- /.col-lg-6 (nested) -->
+                                                    <div class="col-lg-4">
+                                                        <label>UCI:</label>
+                                                        <input class="form-control" id="fspUCI" disabled="disabled">
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <label>FMS Vendor:</label>
+                                                        <input class="form-control" id="fspFmsVendor" disabled="disabled">
+                                                    </div>
+                                                </div>
+                                                <!-- /.row (nested) -->
+                                                <hr size="30">
+                                                <div class="row">
+                                                    <table width="100%" border="0" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td>Begins</td>
+                                                            <td>Ends</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Spending Plan Period</td>
+                                                            <td> <input class="form-control" id="fspplanStart" disabled="disabled"></td>
+                                                            <td> <input class="form-control" id="fspplanEnd" disabled="disabled"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>FMS Service Code</td>
+                                                            <td colspan="2"> 
+                                                                <input class="form-control" id="fspfMSVendorNumber" disabled="disabled">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Regional Center</td>
+                                                            <td colspan="2"> 
+                                                                <input class="form-control" id="fspregionalCenter" disabled="disabled">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Self Determination</td>
+                                                            <td colspan="2"> 
+                                                                <input class="form-control" id="fspSelfDetermination" disabled="disabled">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Total Certified Budget Amount</td>
+                                                            <td colspan="2">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">$</span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" id="fsptotalCertifiedBudgetAmount" disabled="disabled">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%" border="0" class="table table-striped table-bordered table-hover" id="budgetCategoryTable">
+                                                        <tr>
+                                                            <td>Budget Category</td>
+                                                            <td>Service</td>
+                                                            <td>Service Code</td>
+                                                            <td>Frequency</td>
+                                                            <td>Amount</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label id="fspBudgetCategory">&nbsp;</label></td>
+                                                            <td><label id="fspService">&nbsp;</label></td>
+                                                            <td><label id="fspServiceCode">&nbsp;</label></td>
+                                                            <td><label id="fspFrequency">&nbsp;</label></td>
+                                                            <td><label id="fspAmount">&nbsp;</label></td>
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%" border="0" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                        <tr>
+                                                            <td>Certified Budget Amount</td>
+                                                            <td>
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">$</span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="0.00" id="fspCertifiedBudgetAmount" disabled="disabled">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Participants's Spending Plan Amount</td>
+                                                            <td>
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">$</span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="0.00" id="fspParticipantsSpendingPlanAmount" disabled="disabled">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Certified Budget Dollars Remaining</td>
+                                                            <td>
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text">$</span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" placeholder="0.00" id="fspCertifiedBudgetDollarsRemaining" disabled="disabled",>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="panel-body" id="printBtnDiv">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                <button type="button" class="btn btn-success" id="print-spending-plan">Print Spending Plan</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.col-lg-6 (nested) -->
+                                                        <!-- <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                <button type="button" class="btn btn-success" id="print-detailed-report">Print Detailed Report</button>
+                                                            </div>
+                                                        </div> -->
+                                                        <div class="col-lg-4">
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.row (nested) -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            This Spending Plan and the pay rates, benefits, and other expenses has been completed and approved by the Person Served/Employer of Record with assistance from the below signers. This template does not take the place of the Plan of Service, but is simply a tool to assist you with determining pay, benefits, and expenses. The Plan of Service must be followed in regards to the service delivery. Using this tool implies consent to the terms of use.
+                            <br /><br />
+                            <div class="row">
+                                <div class="col">
+                                    _____________________________________________________________ <br />Participant/Parent/Legal Representative
+                                </div>
+                                <div class="col">
+                                    ____________________________ <br />Date
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    _____________________________________________________________ <br />Community Service Coordinator
+                                </div>
+                                <div class="col">
+                                    ____________________________ <br />Date
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    _____________________________________________________________ <br />Services and Supports Manager
+                                </div>
+                                <div class="col">
+                                    ____________________________ <br />Date
+                                </div>
+                            </div>
+                        </div>
+                        <form class="comment-form">
+                            <h3>Plan Name</h3>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <input class="form-control" type="text" placeholder="Name of the Plan*" ng-model="data.name" required>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <button class="btn btn-success" ng-click="savePlan()">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- faq end -->
+    <!-- footer begin-->
+    <div class="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 d-xl-flex d-lg-flex align-items-center">
+                        <div class="copyright">
+                            <p>Copyright © 2022 Zaara Tech. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pdfEditor"></div>
+    </div>
+    <!-- footer end -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-migrate-3.0.1.js"></script>
+    <script src="assets/js/pdf/html2canvas.js"></script>
+    <script src="assets/js/pdf/jspdf.mychanges.js"></script>
+    <script src="assets/js/pdf/jspdf.min.js"></script>
+    <script src="assets/js/pdf/canvas-toBlob.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/js/owl.carousel.js"></script>
+    <!-- magnific popup -->
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <!-- counter up js -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <!-- way poin js-->
+    <script src="assets/js/waypoints.min.js"></script>
+    <!-- wow js-->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- main -->
+    <script src="assets/js/main.js"></script>
+    <!--  <script src="js1/jquery.js"></script>
+    <script src="js1/script.js"></script> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="assets/js/createPlan.js"></script>
+</body>
+
+</html>
