@@ -484,7 +484,7 @@ ul {
     How it works
 ==========================================*/
 .how-it-works {
-  padding: 120px 0; }
+  padding: 50px 0; }
   .how-it-works .single-works {
     text-align: center;
     padding: 40px 30px 15px;
@@ -1398,7 +1398,7 @@ ul {
     faq
 ==========================================*/
 .faq {
-  padding: 120px 0 90px; }
+  padding: 50px 0 90px; }
   .faq a {
     background: rgba(0, 213, 99, 0.09);
     color: #158195;
@@ -1573,7 +1573,7 @@ ul {
     login
 ==========================================*/
 .login {
-  padding: 120px 0 120px; }
+  padding: 60px 0 60px; }
   .login.login-1 {
     padding: 120px 0 90px; }
   .login.login-4 {

@@ -110,7 +110,7 @@
                     <div class="section-title">
                         <h2 class="add-space">Spending Plan Generator
                         </h2>
-                        <p>This generator is for estimation of an individual spending plan and does not constitute an obligation on the part of GT Independence or to fund or authorize services</p>
+                        <p>This generator is for estimation of an individual spending plan and does not constitute an obligation on the part of ICC or to fund or authorize services</p>
                     </div>
                 </div>
             </div>
@@ -536,7 +536,7 @@
                                                                         <div class="input-group-prepend">
                                                                             <span class="input-group-text">$</span>
                                                                         </div>
-                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                        <input type="text" class="form-control" disabled="disabled" value="1.00">
                                                                     </div>
                                                                     </div>
                                                                     <div class="row">
@@ -545,7 +545,7 @@
                                                                         <div class="input-group-prepend">
                                                                             <span class="input-group-text">$</span>
                                                                         </div>
-                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                        <input type="text" class="form-control" disabled="disabled" value="0.00">
                                                                     </div>
                                                                     </div>
                                                                     <div class="row">
@@ -554,7 +554,7 @@
                                                                         <div class="input-group-prepend">
                                                                             <span class="input-group-text">$</span>
                                                                         </div>
-                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                        <input type="text" class="form-control" disabled="disabled" value="1.00">
                                                                     </div>
                                                                     </div>
                                                                     <div class="row">
@@ -563,7 +563,7 @@
                                                                         <div class="input-group-prepend">
                                                                             <span class="input-group-text">$</span>
                                                                         </div>
-                                                                        <input type="text" class="form-control" disabled="disabled">
+                                                                        <input type="text" class="form-control" disabled="disabled" value="150.00">
                                                                     </div>
                                                                     </div>
                                                                 </td>
@@ -909,6 +909,199 @@
     </div>
     </div>
     <!-- faq end -->
+
+    <div id="pdfContainer" class="container" style="display: none;">
+        <h2>Integrated Community Collaborative</h2>
+        <br>
+        <h4>Spending Plan</h4>
+        <br>
+        <table class="table table-bordered">
+            <tr>
+                <td>Name: </td>
+                <td><input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="Sample Spending Plan" id="printPlanName"></td>
+                <td>UCI: </td>
+                <td><input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="UCI0001" id="printUCI"></td>
+                <td>FMS Vendor: </td>
+                <td><input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="ICC VENDOR"
+                    id="printFmsVendor"></td>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-bordered">
+            <tr>
+                <th></th>
+                <th>Begins</th>
+                <th>Ends</th>
+            </tr>
+            <tr>
+                <td><label>Spending Plan Period</label></td>
+                <td>
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="11-09-2022" id="printStartDate"></td>
+                <td>
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="11-09-2023" id="printEndDate">
+                </td>
+            </tr>
+            <tr>
+                <td><label>FMS Service Code</label></td>
+                <td colspan="2">
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="317" id="printFmsServiceCode">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Regional Center</label></td>
+                <td colspan="2">
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="407" id="printRegionalCenter">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Self Determination</label></td>
+                <td colspan="2">
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="Sole Employer" id="printSelfDetermination">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Total Certified Budget Amount</label></td>
+                <td colspan="2">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1200" id="printTotalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-bordered">
+            <tr>
+                <th>Budget Category</th>
+                <th>Service</th>
+                <th>Service Code</th>
+                <th>Frequency</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td><label id="printBudgetCategory">Living Arrangement</label></td>
+                <td><label id="printService">317 - FMS Sole Employe</label></td>
+                <td><label id="printServiceCode">317</label></td>
+                <td><label id="printFrequency">ICC providing 317 - FMS Sole Employer at $110.00 per hr for each
+                        month for months for 11 total hrs at a grand total of $1,210.00</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1210.00" id="printAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><label>Total for Living Arrangement Category</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1210.00" id="printTotalforLivingArrangementCategory">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><label>Total for Employment and Community Participation Category</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="0.00">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><label>Total for Health and Safety Category</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="0.00">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-bordered" style="border: 1px solid grey;">
+            <tr>
+                <td><label>Certified Budget Amount</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1.00" id="printCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Participants's Spending Plan Amount</label></td>
+                <td colspan="2">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1210.00" id="printSpendingPlanAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Certified Budget Dollars Remaining</label></td>
+                <td colspan="2">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="-1209.00" id="printCertifiedBudgetDollarsRemaining">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <div class="row">
+            <p>This Spending Plan and the pay rates, benefits, and other expenses has been completed and approved by the Person Served/Employer of Record with assistance from the below signers. This template does
+                not take the place of the Plan of Service, but is simply a tool to assist you with determining pay, benefits, and expenses. The Plan of Service must be followed in regards to the service delivery. Using this tool
+                implies consent to the terms of</p>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row" style="border: 1px solid grey;">
+                <div class="col" style="border: 1px solid grey;">
+                    _____________________________________________________________ <br />Participant/Parent/Legal Representative
+                </div>
+                <div class="col" style="border: 1px solid grey;">
+                    ____________________________ <br />Date
+                </div>
+            </div>
+            <div class="row" style="border: 1px solid grey;">
+                <div class="col" style="border: 1px solid grey;">
+                    _____________________________________________________________ <br />Community Service Coordinator
+                </div>
+                <div class="col" style="border: 1px solid grey;">
+                    ____________________________ <br />Date
+                </div>
+            </div>
+            <div class="row" style="border: 1px solid grey;">
+                <div class="col" style="border: 1px solid grey;">
+                    _____________________________________________________________ <br />Services and Supports Manager
+                </div>
+                <div class="col" style="border: 1px solid grey;">
+                    ____________________________ <br />Date
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- footer begin-->
     <div class="footer">
         <div class="footer-bottom">

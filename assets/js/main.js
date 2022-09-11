@@ -4,6 +4,9 @@
 
     jQuery(document).ready(function($){
 
+        
+
+
         $('.banner .scroll-down').on('click', function () {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
@@ -128,8 +131,32 @@
             $("#bgndVideo").YTPlayer();
         }
        
+        $("#loginButton").click(function(){
+            var password = $("#password").val();
+            var username = $("#userId").val();
+            if(username === "admin" && password === "admin@password"){
+                window.location = location.origin+"/icc/dashboard.html";
+                localStorage.setItem("login",true);
+            }else{
+                $("#messageContainer").html("Your username or Password is incorrect?");
+                $("#messageContainer").show();
+                return false;
+            }
+            return false;
+        });
 
- 
+
+        var login = localStorage.getItem("login");
+        if(login === "true" && location.pathname === "/icc/index.html"){
+            window.location = location.origin+"/icc/dashboard.html";
+        }else if(login !== "true" && location.pathname !== "/icc/index.html"){
+            window.location = location.origin+"/icc/index.html";
+        }
+
+        $(document).on("click", ".logout-user", function(event){
+            localStorage.clear();
+            window.location = location.origin+"/icc/index.html";
+        });
     });
 
 

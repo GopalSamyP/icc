@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Community Collaborative</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<style>
+    table, th, td { border: 1px solid black; }
+</style>
+
+<body>
+    <div id="pdfContainer" class="container" style="display: none;">
+        <h2>Integrated Community Collaborative</h2>
+        <br>
+        <h4>Spending Plan</h4>
+        <br>
+        <table class="table table-bordered">
+            <tr>
+                <td>Name: </td>
+                <td><input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="Sample Spending Plan"></td>
+                <td>UCI: </td>
+                <td><input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="UCI0001"></td>
+                <td>FMS Vendor: </td>
+                <td><input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="ICC VENDOR"></td>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-bordered">
+            <tr>
+                <th></th>
+                <th>Begins</th>
+                <th>Ends</th>
+            </tr>
+            <tr>
+                <td><label>Spending Plan Period</label></td>
+                <td>
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="11-09-2022" id="startDate"></td>
+                <td>
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="11-09-2023" id="endDate">
+                </td>
+            </tr>
+            <tr>
+                <td><label>FMS Service Code</label></td>
+                <td colspan="2">
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="317" id="fmsServiceCode">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Regional Center</label></td>
+                <td colspan="2">
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="407" id="regionalCenter">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Self Determination</label></td>
+                <td colspan="2">
+                    <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="Sole Employer" id="selfDetermination">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Total Certified Budget Amount</label></td>
+                <td colspan="2">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1200" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-bordered">
+            <tr>
+                <th>Budget Category</th>
+                <th>Service</th>
+                <th>Service Code</th>
+                <th>Frequency</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td><label>Living Arrangement</label></td>
+                <td><label>317 - FMS Sole Employe</label></td>
+                <td><label>317</label></td>
+                <td><label>ICC providing 317 - FMS Sole Employer at $110.00 per hr for each
+                        month for months for 11 total hrs at a grand total of $1,210.00</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1210.00" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><label>Total for Living Arrangement Category</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1210.00" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><label>Total for Employment and Community Participation Category</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="0.00" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><label>Total for Health and Safety Category</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="0.00" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-bordered" style="border: 1px solid grey;">
+            <tr>
+                <td><label>Certified Budget Amount</label></td>
+                <td>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1.00" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Participants's Spending Plan Amount</label></td>
+                <td colspan="2">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="1210.00" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Certified Budget Dollars Remaining</label></td>
+                <td colspan="2">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control" style="border-width: 1px; border-color: black;" type="text" value="-1209.00" id="totalCertifiedBudgetAmount">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <div class="row">
+            <p>This Spending Plan and the pay rates, benefits, and other expenses has been completed and approved by the Person Served/Employer of Record with assistance from the below signers. This template does
+                not take the place of the Plan of Service, but is simply a tool to assist you with determining pay, benefits, and expenses. The Plan of Service must be followed in regards to the service delivery. Using this tool
+                implies consent to the terms of</p>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row" style="border: 1px solid grey;">
+                <div class="col" style="border: 1px solid grey;">
+                    _____________________________________________________________ <br />Participant/Parent/Legal Representative
+                </div>
+                <div class="col" style="border: 1px solid grey;">
+                    ____________________________ <br />Date
+                </div>
+            </div>
+            <div class="row" style="border: 1px solid grey;">
+                <div class="col" style="border: 1px solid grey;">
+                    _____________________________________________________________ <br />Community Service Coordinator
+                </div>
+                <div class="col" style="border: 1px solid grey;">
+                    ____________________________ <br />Date
+                </div>
+            </div>
+            <div class="row" style="border: 1px solid grey;">
+                <div class="col" style="border: 1px solid grey;">
+                    _____________________________________________________________ <br />Services and Supports Manager
+                </div>
+                <div class="col" style="border: 1px solid grey;">
+                    ____________________________ <br />Date
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="downloadSpPDF">Download AS PDF</button>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/pdf/html2canvas.js"></script>
+    <script src="assets/js/pdf/jspdf.mychanges.js"></script>
+    <script src="assets/js/pdf/jspdf.min.js"></script>
+    <script src="assets/js/pdf/canvas-toBlob.js"></script>
+    <script src="assets/js/print-plan.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>

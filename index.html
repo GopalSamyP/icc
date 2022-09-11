@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,7 +37,6 @@
         </div>
     </div>
     <!-- preloader end -->
-
     <!-- header begin-->
     <div class="header">
         <div class="header-top">
@@ -46,12 +44,10 @@
                 <div class="row justify-content-between">
                     <div class="col-xl-5 col-lg-5">
                         <div class="support-bar-left">
-                           
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-5">
                         <div class="support-bar-right">
-                         
                         </div>
                     </div>
                 </div>
@@ -68,8 +64,7 @@
                                 </div>
                             </div>
                             <div class="d-xl-none d-lg-none d-block col-5">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                     <i class="fas fa-bars"></i>
                                 </button>
                             </div>
@@ -78,12 +73,10 @@
                     <div class="col-xl-8 col-lg-9 d-xl-flex d-lg-flex d-block align-items-center">
                         <div class="mainmenu">
                             <nav class="navbar navbar-expand-lg">
-
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
-                               
                                         <li class="nav-item">
-                                           <a class="nav-link" href="index.html">Support</a>
+                                            <a class="nav-link" href="index.html">Support</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -95,54 +88,51 @@
         </div>
     </div>
     <!-- header end -->
-
     <!-- breadcrump begin-->
     <div class="hyip-breadcrump extra_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-8">
                     <div class="breadcrump-title text-center">
-                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- breadcrump end -->
-
     <!-- login-3 begin-->
     <div class="login">
         <div class="container">
             <div class="row justify-content-center">
-    
+                <div class="alert alert-danger" role="alert" id="messageContainer" style="display: none;">
+                  This is a danger alert—check it out!
+                </div>
+            </div>
+            <div class="row justify-content-center">
                 <div class="col-xl-5 col-lg-5">
                     <div class="part-form">
                         <h4 class="login-title">Login with username</h4>
-                        <form>
-                            <input type="text" placeholder="Your Name">
-                            <input type="text" placeholder="Your Password">
+                        <form name="loginForm" id="loginForm">
+                            <input type="text" placeholder="Your Name" id="userId">
+                            <input type="password" placeholder="Your Password" id="password">
                             <img src="assets/img/captha.jpg" alt="">
-                            <button type="submit"><a href="dashboard.html" class="btn btn-sm mln-btn-invert">Login Now</a></button>
+                            <button id="loginButton" type="submit">Login Now</button>
                         </form>
-                        
-                         <div align="center"> 
-                         
-                          <span class="d-block text-center my-4 text-muted"> or sign in with</span>
-                  
-                  <div class="social-login text-center">
-                    <a href="#" class="facebook">
-                      <span class="fab fa-facebook-f mr-3"></span> 
-                    </a>
-                    <a href="#" class="twitter">
-                      <span class="fab fa-twitter mr-3"></span> 
-                    </a>
-                    <a href="#" class="google">
-                      <span class="fab fa-google mr-3"></span> 
-                    </a>
-                  </div>
-                         
-                       </div>
-                    <span class="forget-password text-align">Don't have an account?<a href="register.html">Resiter Now</a></span>
+                        <div align="center">
+                            <span class="d-block text-center my-4 text-muted"> or sign in with</span>
+                            <div class="social-login text-center">
+                                <a href="#" class="facebook">
+                                    <span class="fab fa-facebook-f mr-3"></span>
+                                </a>
+                                <a href="#" class="twitter">
+                                    <span class="fab fa-twitter mr-3"></span>
+                                </a>
+                                <a href="#" class="google">
+                                    <span class="fab fa-google mr-3"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="forget-password text-align">Don't have an account?<a href="register.html">Register Now</a></span>
                         <span class="forget-password text-align">Forgot Your Password?<a href="forgotpassword.html">Reset Now</a></span>
                     </div>
                 </div>
@@ -150,10 +140,8 @@
         </div>
     </div>
     <!-- login-3 end -->
-
     <!-- footer begin-->
     <div class="footer">
-       
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
@@ -175,7 +163,6 @@
         </div>
     </div>
     <!-- footer end -->
-
     <!-- jquery -->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/jquery-migrate-3.0.1.js"></script>
@@ -194,6 +181,5 @@
     <!-- main -->
     <script src="assets/js/main.js"></script>
 </body>
-
 
 </html>

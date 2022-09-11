@@ -171,7 +171,7 @@ app.controller('planController', ['$scope', "$locale", '$http', function($scope,
     	  data: finalData
     	}).then(function successCallback(response) {
     	   alert(finalData.planName+" Created Successfully");
-           window.location = location.origin+"/loanmanagement/dashboard.html";
+           window.location = location.origin+"/icc/dashboard.html";
     	}, function errorCallback(response) {
     	    // called asynchronously if an error occurs
     	    // or server returns response with an error status.
@@ -179,20 +179,68 @@ app.controller('planController', ['$scope', "$locale", '$http', function($scope,
     }
 
     
-    var pdfDocument = new jsPDF();
+    var pdfDocument = new jsPDF('p', 'pt', 'a4', true);
     var specialElementHandlers = {
         '#printBtnDiv': function (element, renderer) {
             return true;
         }
     };
     $("#print-spending-plan").click(function(){
-        
-        pdfDocument.fromHTML($('#collapseFive').html(), 15, 15, {
-            'width': 900,
-            'height': 980,
-            'elementHandlers': specialElementHandlers
+
+        $("#pdfContainer").show();
+        $("#printPlanName").val($scope.data.details.name);
+        $("#printUCI").val($scope.data.details.uci);
+        $("#printFmsVendor").val($scope.data.details.fmsvendor);
+
+        $("#printStartDate").val($scope.data.details.SpendingPlan.planStart);
+        $("#printEndDate").val($scope.data.details.SpendingPlan.planEnd);
+        $("#printFmsServiceCode").val($scope.data.details.SpendingPlan.fMSVendorNumber);
+        $("#printRegionalCenter").val($scope.data.details.SpendingPlan.regionalCenter);
+        $("#printSelfDetermination").val($scope.selfDetermination[$scope.data.details.SpendingPlan.SelfDetermination]);
+        $("#printTotalCertifiedBudgetAmount").val($scope.data.details.SpendingPlan.totalCertifiedBudgetAmount);
+
+        $("#printBudgetCategory").html("Living Arrangement");
+        $("#printService").html($("#selectServiceCode option:selected").attr("value"));
+        $("#printServiceCode").html($("#selectServiceCode option:selected").text());
+        $("#printFrequency").html($("#fspFrequency").text());
+        $("#printAmount").val($("#fspAmount").val());
+
+        // $("#printTotalforLivingArrangementCategory").val();
+        // $("#printCertifiedBudgetAmount").val();
+        // $("#printSpendingPlanAmount").val();
+        // $("#printCertifiedBudgetDollarsRemaining").val();
+
+        var pdfDocument = new jsPDF('p', 'pt', 'a3', true);
+        html2canvas($("#pdfContainer"), {
+            onrendered: function(canvas) {
+                var imgData = canvas.toDataURL("image/png", 1.0);
+                pdfDocument.addImage(imgData, 'JPG', 50, 50, 650, 0);
+
+                setTimeout(function() {
+
+                    //Save PDF Doc  
+                    pdfDocument.save($scope.data.name+'-Plan.pdf');
+                    $("#pdfContainer").hide();
+
+                    //Generate BLOB object
+                    // var blob = pdfDocument.output("blob");
+
+                    //Getting URL of blob object
+                    // var blobURL = URL.createObjectURL(blob);
+
+                    //Showing PDF generated in iFrame element
+                    // var iframe = document.getElementById('iFrame-pdf-container');
+                    // iframe.src = blobURL;
+
+                    //Setting download link
+                    // var downloadLink = document.getElementById('downloadSpPDF');
+                    // downloadLink.href = blobURL;
+
+                    // $("#sample-pdf").slideDown();
+
+                }, 0);
+            }
         });
-        pdfDocument.save($scope.data.name+'-Plan.pdf');
     });
 
     $("#spendingPlanButton").click(function(e){
@@ -211,7 +259,7 @@ app.controller('planController', ['$scope', "$locale", '$http', function($scope,
             $("#fspBudgetCategory").html("Living Arrangement");
             $("#fspService").html($("#selectServiceCode option:selected").text());
             $("#fspServiceCode").html($("#selectServiceCode option:selected").attr("value"));
-            $("#fspFrequency").html("GT Independence providing 315 - FMS Bill Payor at $50.00 per hr for each month for months for 3 total hrs at a grand total of $150.00.");
+            $("#fspFrequency").html("ICC providing 315 - FMS Bill Payor at $50.00 per hr for each month for months for 3 total hrs at a grand total of $150.00.");
             $("#fspAmount").html("150.00");
 
             $("#fspCertifiedBudgetAmount").val("150.00");
