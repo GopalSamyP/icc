@@ -50,9 +50,38 @@ app.controller('planController', ['$scope', "$locale", '$http', function($scope,
     	updateServiceTable(false);
     });
 
-    $("#spendingPlanCategories").click(function() {
-        $scope.data.details.SpendingPlan.planStart = $("#planStart").val();
-        $scope.data.details.SpendingPlan.planEnd = $("#planEnd").val();
+    $("#spendingPlanCategories").click(function(e) {
+
+        var message = "";
+        if($scope.data.details.name.length == 0){
+            message = "Please enter participant name";
+        }
+
+        if(message.length == 0 && $scope.data.details.uci.length == 0){
+            message = "Please enter participant UCI";
+        }
+
+        if(message.length == 0 && $scope.data.details.fmsvendor.length == 0){
+            message = "Please enter FMS Vendor";
+        }
+
+        if(message.length == 0 && $scope.data.details.SpendingPlan.regionalCenter.length == 0){
+            message = "Please choose Regional Center";
+        }
+
+        if(message.length == 0 && $scope.data.details.SpendingPlan.totalCertifiedBudgetAmount.length == 0){
+            message = "Please enter Total Certified Budget Amount";
+        }
+
+        if(message.length > 0){
+            e.stopPropagation(); 
+            alert(message);
+        }else{
+            $scope.data.details.SpendingPlan.planStart = $("#planStart").val();
+            $scope.data.details.SpendingPlan.planEnd = $("#planEnd").val();
+        }
+
+        
     });
 
     $('#workersCompensation').click(function() {
@@ -168,7 +197,7 @@ app.controller('planController', ['$scope', "$locale", '$http', function($scope,
 
     $("#spendingPlanButton").click(function(e){
         
-        if($scope.data.name.length > 0){
+        if($scope.data.details.name.length > 0){
             $("#fspName").val($scope.data.details.name);
             $("#fspUCI").val($scope.data.details.uci);
             $("#fspFmsVendor").val($scope.data.details.fmsvendor);
